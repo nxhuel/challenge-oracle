@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/nav.css" />
+    <link rel="stylesheet" href="./styles/section.css" />
+    <link rel="stylesheet" href="./styles/botones.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <nav class="titulo">
+      <h1>a</h1>
+    </nav>
+    <section>
+      <div class="section">
+        <div class="section_escribirTexto">
+          <div class="input-container">
+            <textarea
+              id="textoEncriptado"
+              class="textoEncriptado"
+              type="text"
+              placeholder="Ingrese el texto aquí"
+            ></textarea>
+          </div>
+
+          <div class="section_botones">
+            <button onclick="encriptarTexto();" class="botonEncriptar">
+              Encriptar
+            </button>
+            <button onclick="desencriptarTexto();" class="botonDesencriptar">
+              Desencriptar
+            </button>
+          </div>
+        </div>
+
+        <div class="section_mostrarTexto">
+          <div id="textoMostrado"></div> 
+          <div class="mostrarTexto_img">
+            <img id="imagen" src="img/image.png" alt="" />
+          </div>
+          <div>
+            <h3 id="mostrarSubtitulo" class="mostrarTexto_texto">
+              Ningun mensaje fue encontrado
+            </h3>
+            <p id="mostrarTexto" class="mostrarTexto_texto">
+              Ingrese el texto que desees escriptar o desencriptar.
+            </p>
+          </div>
+          <button onclick="copiarTexto();" class="botonCopiar">Copiar</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>

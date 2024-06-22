@@ -1,0 +1,19 @@
+.botonEncriptar,
+.botonDesencriptar,
+.botonCopiar {
+  width: 70%;
+  height: 40px;
+  border-radius: 20px;
+  color: #275083;
+  border: 2px solid #275083;
+  font-weight: bold;
+}
+
+.botonEncriptar {
+  background-color: #275083;
+  color: #F3F5FC;
+}
+
+.botonCopiar {
+    background-color: #FFFF;
+}

@@ -1,0 +1,11 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #F3F5FC;
+}

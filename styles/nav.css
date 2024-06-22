@@ -1,0 +1,15 @@
+.titulo {
+    height: 66px;
+    width: 100%;
+    background-color: #275083;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+}
+
+.titulo h1 {
+    margin-left: 60px;
+    color: #F3F5FC; 
+    font-size: 55px; 
+}
