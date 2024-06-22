@@ -3,10 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/section.css" />
     <link rel="stylesheet" href="./styles/botones.css" />
+    <link rel="stylesheet" href="./styles/responsive.css">
     <title>Document</title>
   </head>
   <body>
@@ -16,7 +32,7 @@
     <section>
       <div class="section">
         <div class="section_escribirTexto">
-          <div class="input-container">
+          <div id="prueba" class="input-container">
             <textarea
               id="textoEncriptado"
               class="textoEncriptado"
@@ -36,7 +52,13 @@
         </div>
 
         <div class="section_mostrarTexto">
-          <div id="textoMostrado"></div> 
+          <div class="textoMostrado_contenedor">
+            <textarea
+              id="textoMostrado"
+              class="textoMostrado"
+              readonly
+            ></textarea>
+          </div>
           <div class="mostrarTexto_img">
             <img id="imagen" src="img/image.png" alt="" />
           </div>
@@ -44,11 +66,11 @@
             <h3 id="mostrarSubtitulo" class="mostrarTexto_texto">
               Ningun mensaje fue encontrado
             </h3>
-            <p id="mostrarTexto" class="mostrarTexto_texto">
+            <p id="mostrarTexto" class="mostrarTexto_subTexto">
               Ingrese el texto que desees escriptar o desencriptar.
             </p>
           </div>
-          <button onclick="copiarTexto();" class="botonCopiar">Copiar</button>
+          <button id="textoCopiado" onclick="copiarTexto();" class="botonCopiar">Copiar</button>
         </div>
       </div>
     </section>

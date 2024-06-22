@@ -7,13 +7,26 @@
   color: #275083;
   border: 2px solid #275083;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .botonEncriptar {
   background-color: #275083;
-  color: #F3F5FC;
+  color: #f3f5fc;
+}
+
+.botonEncriptar:active {
+  box-shadow: 2px 2px 15px #27508398;
+}
+
+.botonDesencriptar:active {
+  box-shadow: 2px 2px 15px #646464dc;
 }
 
 .botonCopiar {
-    background-color: #FFFF;
+  background-color: #ffff;
+}
+
+.botonCopiar:active {
+  box-shadow: 2px 2px 15px #646464dc;
 }
