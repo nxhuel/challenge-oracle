@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="./styles/nav.css" />
     <link rel="stylesheet" href="./styles/section.css" />
     <link rel="stylesheet" href="./styles/botones.css" />
-    <link rel="stylesheet" href="./styles/responsive.css">
+    <link rel="stylesheet" href="./styles/responsive.css" />
     <title>Document</title>
   </head>
   <body>
@@ -70,7 +70,24 @@
               Ingrese el texto que desees escriptar o desencriptar.
             </p>
           </div>
-          <button id="textoCopiado" onclick="copiarTexto();" class="botonCopiar">Copiar</button>
+          <div class="botones">
+            <button
+              id="encriptadorCopiado"
+              class="botonCopiarDesencriptar"
+              onclick="copiarTextoEncriptado('textoMostrado');"
+              disabled
+            >
+              Copiar texto encriptado
+            </button>
+            <button
+              id="textoCopiado"
+              class="botonCopiarTexto"
+              onclick="copiarTexto('textoEncriptado');"
+              disabled
+            >
+              Copiar texto
+            </button>
+          </div>
         </div>
       </div>
     </section>

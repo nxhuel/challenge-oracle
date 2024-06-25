@@ -1,11 +1,29 @@
 .botonEncriptar,
-.botonDesencriptar,
-.botonCopiar {
+.botonDesencriptar {
   width: 70%;
   height: 40px;
   border-radius: 20px;
   color: #275083;
-  border: 2px solid #275083;
+  border: 2px solid #bdcde0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botones {
+  width: 100%;
+ display: flex;
+ padding: 30px;
+ gap: 4%;
+
+}
+
+.botonCopiarTexto,
+.botonCopiarDesencriptar {
+  width: 70%;
+  height: 40px;
+  border-radius: 20px;
+  color: #275083;
+  border: 2px solid #bdcde0;
   font-weight: bold;
   cursor: pointer;
 }
@@ -23,10 +41,22 @@
   box-shadow: 2px 2px 15px #646464dc;
 }
 
-.botonCopiar {
+.botonCopiartexto,
+.botonCopiarDesencriptar {
   background-color: #ffff;
 }
 
-.botonCopiar:active {
+.botonCopiar:active,
+.botonCopiarDesencriptar:active {
   box-shadow: 2px 2px 15px #646464dc;
+}
+
+.botonCopiarTexto:disabled,
+.botonCopiarDesencriptar:disabled {
+  background-color: #898989;
+  color: white;
+  border: none;
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.6;
 }
