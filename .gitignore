@@ -1,0 +1,19 @@
+ENCRIPTAR TEXTO
+Escribo un msg en la caja de texto
+El boton Encriptar debe leerlo
+Esa variable va a ser mostrada en el otro espacion del html reemplazando la img
+
+DESENCRIPTAR TEXTO
+Volver el texto encriptado al texto normal
+
+COPIAR TEXTO
+Copiar el texto normal o encriptado dependiendo su estado
+
+RESTAURAR TEXTO
+Debe dejar el contedeor vacio de ambos contenedor
+
+ERROR TEXTO
+No deberia decir no dejes el campo vacio en la 2da terminal, deberia abrir un cartel con ese mensaje de ERROR
+
+ARREGLAR
+Responsive

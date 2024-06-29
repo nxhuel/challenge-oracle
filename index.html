@@ -19,79 +19,145 @@
     />
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="./styles/nav.css" />
-    <link rel="stylesheet" href="./styles/section.css" />
-    <link rel="stylesheet" href="./styles/botones.css" />
+    <link rel="stylesheet" href="./styles/videoFondo.css" />
+    <link rel="stylesheet" href="./styles/consolas.css" />
+    <link rel="stylesheet" href="./styles/alertaError.css" />
     <link rel="stylesheet" href="./styles/responsive.css" />
-    <title>Document</title>
+    <title>Encryptor - Challenge oracle</title>
   </head>
   <body>
-    <nav class="titulo">
-      <h1>a</h1>
-    </nav>
     <section>
-      <div class="section">
-        <div class="section_escribirTexto">
-          <div id="prueba" class="input-container">
-            <textarea
-              id="textoEncriptado"
-              class="textoEncriptado"
-              type="text"
-              placeholder="Ingrese el texto aquí"
-            ></textarea>
-          </div>
+      <div id="backgroud-video" class="backgroud-video">
+        <!-- <video autoplay muted loop id="video-background">
+          <source src="video/retroDos.mp4" type="video/mp4" />
+        </video> -->
+        <img src="img/fondoDos.jpg" id="video-background" alt="fondo" />
+      </div>
 
-          <div class="section_botones">
-            <button onclick="encriptarTexto();" class="botonEncriptar">
-              Encriptar
-            </button>
-            <button onclick="desencriptarTexto();" class="botonDesencriptar">
-              Desencriptar
-            </button>
+      <div id="accesoDenegado" class="accesoDenegado">
+        <div class="subAccesoDenegado">
+          <p>X ACCESO DENEGADO</p>
+        </div>
+      </div>
+
+      <div id="cartelError" class="cartelError">
+        <div class="subCartelError">
+          <p class="subCartelError_texto"></p>
+          <img src="img/cartelError.png" alt="cartelError" />
+        </div>
+      </div>
+
+      <div class="consolas">
+        <div class="consolaUno">
+          <div class="consolaUno_nav">
+            <div class="consolaUno_nav_titulo">
+              <p>Terminal Encrypter</p>
+            </div>
+            <div class="consolaUno_nav_botones">
+              <button onclick="errorCerrarVentana();" class="boton_minimizar">
+                -
+              </button>
+              <button onclick="errorCerrarVentana();">x</button>
+            </div>
+          </div>
+          <div class="subConsolaUno">
+            <div class="subConsolaUno_nav">
+              <button onclick="encriptarTexto();">Encriptar</button>
+              <button onclick="desencriptarTexto();">Desencriptar</button>
+              <button onclick="restaurarTexto();">Restaurar</button>
+            </div>
+            <div class="subConsolaUno_insertarTexto">
+              <div class="insertarTexto">
+                <p>Encriptar:</p>
+                <textarea
+                  id="textoEncriptado"
+                  name=""
+                  id=""
+                  class="insertarTexto_txt"
+                ></textarea>
+              </div>
+              <div class="insertarTextoDecoracion">
+                <p>Database:</p>
+                <input
+                  type="text"
+                  placeholder="User table / Admin role"
+                  readonly
+                />
+              </div>
+            </div>
+            <div
+              class="subConsolaUno_decoracionInicial"
+              id="subConsolaUno_decoracionInicial"
+              style="display: block"
+            >
+              <p>status: sin encriptar</p>
+            </div>
+            <div
+              class="subConsolaUno_decoracion"
+              id="subConsolaUno_decoracion"
+              style="display: none"
+            >
+              <p>SUCCESS: Encryption key generated @ 23.86.111.0</p>
+              Encryption Key:
+              <span class="decoracionSubrayado">WqUZELL?>+@7%Fu</span>
+            </div>
+            <div class="subConsolaUno_evitarErrores">
+              <p>
+                <br>
+                Aviso legal: El uso de TextEncryptor™ para actividades de
+                cifrado no autorizadas está estrictamente prohibido.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="section_mostrarTexto">
-          <div class="textoMostrado_contenedor">
+        <div class="consolaDos" id="consolaDos" style="display: none">
+          <div class="consolaDos_nav">
+            <div class="consolaDos_nav_titulo">
+              <p>Terminal</p>
+            </div>
+            <div class="consolaDos_nav_botones">
+              <button onclick="cerrarVentana();" class="boton_minimizar">
+                -
+              </button>
+              <button onclick="cerrarVentana();">x</button>
+            </div>
+          </div>
+          <div class="subConsolaDos">
+            <div class="subConsolaDos_nav">
+              <p class="subConsolaDos_nav_texto"></p>
+            </div>
             <textarea
               id="textoMostrado"
-              class="textoMostrado"
+              class="subConsolaDos_textoMostrado"
               readonly
-            ></textarea>
-          </div>
-          <div class="mostrarTexto_img">
-            <img id="imagen" src="img/image.png" alt="" />
-          </div>
-          <div>
-            <h3 id="mostrarSubtitulo" class="mostrarTexto_texto">
-              Ningun mensaje fue encontrado
-            </h3>
-            <p id="mostrarTexto" class="mostrarTexto_subTexto">
-              Ingrese el texto que desees escriptar o desencriptar.
-            </p>
-          </div>
-          <div class="botones">
-            <button
-              id="encriptadorCopiado"
-              class="botonCopiarDesencriptar"
-              onclick="copiarTextoEncriptado('textoMostrado');"
-              disabled
             >
-              Copiar texto encriptado
-            </button>
-            <button
-              id="textoCopiado"
-              class="botonCopiarTexto"
-              onclick="copiarTexto('textoEncriptado');"
-              disabled
-            >
-              Copiar texto
-            </button>
+            </textarea>
+            <div class="subConsolaDos_botones">
+              <button
+                id="textoCopiado"
+                class="botonCopiarTexto"
+                onclick="copiarTexto('textoMostrado');"
+                disabled
+              >
+                Copiar
+              </button>
+              <button
+                id="encriptadorCopiado"
+                class="botonCopiarDesencriptar"
+                onclick="copiarTextoEncriptado('textoMostrado');"
+                disabled
+              >
+                Copiar texto encriptado
+              </button>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <script src="app.js"></script>
+    <footer></footer>
+
+    <script src="js/app.js"></script>
   </body>
 </html>

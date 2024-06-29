@@ -1,0 +1,47 @@
+.accesoDenegado {
+  background-color: red;
+  position: absolute;
+  /* padding: 3px; */
+  border: 2px solid red;
+  border-radius: 20px;
+  z-index: 1000;
+  display: none;
+}
+
+.subAccesoDenegado {
+  position: relative;
+  background-color: red;
+  height: 70px;
+  width: 190px;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 20px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.cartelError {
+  background-color: red;
+  position: absolute;
+  /* padding: 3px; */
+  border: 3px solid red;
+  border-radius: 20px;
+  z-index: 1000;
+  display: none;
+  box-sizing: border-box;
+}
+
+.subCartelError {
+  position: relative;
+  background-color: red;
+  /* font-size: 25px; */
+  padding: 10px;
+  text-align: center;
+  border-radius: 20px;
+  border: 3px solid black;
+  font-weight: bold;
+}
+
+.subCartelError img {
+  height: 130px;
+}

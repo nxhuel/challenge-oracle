@@ -1,128 +1,305 @@
 @media screen and (min-width: 800px) {
-  .titulo {
-    width: 100%;
-    background-color: #275083;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  .background-video {
     position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    position: relative;
   }
 
-  .titulo h1 {
-    margin-left: 60px;
-    color: #f3f5fc;
-    font-size: 65px;
-    font-family: "Lobster", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  .backgroud-video img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: hue-rotate(270deg) brightness(0.5) saturate(2);
+    animation-delay: 3s;
   }
 
-  .section {
-    background-color: #f3f5fc;
+  .consolas {
+    position: absolute;
+    background-color: transparent;
+    width: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: row;
-    padding: 8% 5%;
-    height: 100vh;
+    align-items: center;
   }
 
-  .section_escribirTexto,
-  .section_mostrarTexto {
-    /* background-color: brown; */
-    width: 40%;
+  /* consola uno */
+
+  .consolaUno,
+  .consolaDos {
+    background-color: black;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 512px;
+    height: 408px;
+    border: 2px solid #00ff00;
+  }
+
+  .consolaUno_nav,
+  .consolaDos_nav {
+    background-color: #00ff00;
+    width: 100%;
+    height: 8%;
+    padding: 1% 1% 1% 2%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-
-  .section_escribirTexto {
-    padding-top: 0%;
-  }
-  .section_mostrarTexto {
-    background-color: #ffffff;
-    border-radius: 10px;
-  }
-
-  .input-container {
+    justify-content: space-between;
+    align-items: center;
     position: relative;
-    width: 100%;
   }
 
-  .textoEncriptado {
-    background-color: #f3f5fc;
-    width: 100%;
-    height: 300%;
-    padding: 30px;
-    font-size: 20px;
-    border: none;
-    outline: none;
-    resize: none;
-    box-sizing: border-box;
-    color: #275083;
+  .consolaUno_nav_titulo,
+  .consolaDos_nav_titulo {
+    position: absolute;
+    gap: 5px;
   }
 
-  .textoEncriptado::placeholder {
-    color: #275083;
-    font-size: 20px;
-    opacity: 1;
-    pointer-events: none;
-  }
-
-  .section_botones {
-    /* background-color: aqua; */
-    padding: 30px;
-    width: 100%;
+  .consolaUno_nav_botones,
+  .consolaDos_nav_botones {
     display: flex;
-    gap: 4%;
+    gap: 5px;
+    position: absolute;
+    right: 10px;
   }
 
-  .mostrarTexto_img {
-    width: 50%;
-  }
-
-  .mostrarTexto_img img {
-    width: 100%;
-    object-fit: cover;
-  }
-
-  .mostrarTexto_texto,
-  .mostrarTexto_subTexto {
-    text-align: center;
-    font-size: 20px;
-  }
-
-  .textoMostrado_contenedor {
-    width: 100%;
-    padding: 0% 10%;
-  }
-
-  .textoMostrado {
-    width: 100%;
-    height: 300%;
-    padding: 30px;
-    font-size: 20px;
+  .consolaUno_nav_botones button,
+  .consolaDos_nav_botones button {
+    background-color: #00ff00;
+    font-size: large;
+    font-weight: bolder;
     border: none;
-    outline: none;
-    resize: none;
+    width: 35px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .boton_minimizar {
+    padding-top: 3%;
+  }
+
+  /* sub consola uno */
+
+  .subConsolaUno,
+  .subConsolaDos {
+    background-color: transparent;
+    width: calc(100% - 20px);
+    height: calc(92% - 20px);
+    /* padding: 1%; */
+    margin: 10px;
+    border: 2px solid #00ff00;
+  }
+
+  .subConsolaUno_nav,
+  .subConsolaDos_nav {
+    background-color: #00ff00;
+    height: 10%;
+    padding: 1%;
+    align-items: center;
+  }
+
+  .subConsolaUno_nav button {
+    background-color: black;
+    padding: 1%;
+    font-size: x-small;
+    color: #00ff00;
+    border: 2px solid #000;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  .subConsolaUno_nav button:active {
+    color: aliceblue;
+  }
+
+  .subConsolaUno_insertarTexto {
+    color: #00ff00;
+    font-size: small;
+    height: 50%;
+    padding: 2% 1% 1% 2%;
+    position: relative;
+    border-bottom: 2px solid #00ff00;
+  }
+
+  .insertarTexto_txt,
+  input[type="text"] {
+    background-color: black;
+    color: lime;
+    border: 1px solid lime;
+    font-family: monospace;
+    width: 100%;
+    padding: 5px;
     box-sizing: border-box;
   }
 
-  .botonEncriptar,
-  .botonDesencriptar,
-  .botonCopiar {
-    width: 70%;
-    height: 40px;
+  .insertarTexto_txt:focus,
+  input[type="text"]:focus {
+    outline: none;
+    border-color: lime;
+  }
+
+  .insertarTexto_txt {
+    border: none;
+    width: 350px;
+    resize: none;
+  }
+
+  .insertarTexto_txt::-webkit-scrollbar {
+    display: none;
+  }
+
+  .insertarTexto,
+  .insertarTextoDecoracion {
+    align-items: center;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .insertarTextoDecoracion {
+    bottom: 20%;
+    gap: 25px;
+  }
+
+  .insertarTextoDecoracion input {
+    width: 200px;
+  }
+
+  .subConsolaUno_decoracionInicial,
+  .subConsolaUno_decoracion {
+    height: 20%;
+    padding: 2% 1% 1% 1%;
+    border-bottom: 2px solid #00ff00;
+    font-size: smaller;
+  }
+
+  .subConsolaUno_decoracionInicial {
+    text-align: center;
+    color: #00ff00;
+  }
+
+  .subConsolaUno_decoracion {
+    color: #00ff00;
+  }
+
+  .subConsolaUno_decoracion p {
+    margin-bottom: 10px;
+  }
+
+  .decoracionSubrayado {
+    background-color: forestgreen;
+  }
+
+  .subConsolaUno_evitarErrores {
+    font-size: x-small;
+    padding: 0% 2% 0% 2%;
+    color: #00ff00;
+  }
+
+  /* consola dos */
+
+  .subConsolaDos_nav {
+    font-size: small;
+    text-align: center;
+  }
+
+  .subConsolaDos_textoMostrado {
+    color: #00ff00;
+    font-size: small;
+    padding: 2% 1% 1% 2%;
+    position: relative;
+    border: 1px solid #00ff00;
+    background-color: black;
+    width: 100%;
+    height: 70%;
+    resize: none;
+  }
+
+  .subConsolaDos_textoMostrado:focus,
+  input[type="text"]:focus {
+    color: #00ff00;
+    outline: none;
+    border-color: #00ff00;
+  }
+
+  .subConsolaDos_textoMostrado::-webkit-scrollbar {
+    display: none;
+  }
+
+  .subConsolaDos_botones {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 20%;
+  }
+
+  .subConsolaDos_botones button {
+    background-color: black;
+    padding: 1%;
+    color: #00ff00;
+    border: 2px solid #00ff00;
     border-radius: 20px;
-    color: #275083;
-    border: 2px solid #275083;
+    cursor: pointer;
+  }
+
+  .botonCopiarTexto:disabled,
+  .botonCopiarDesencriptar:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  .accesoDenegado {
+    background-color: red;
+    position: absolute;
+    padding: 3px;
+    border: 3px solid red;
+    border-radius: 20px;
+    z-index: 1000;
+    display: none;
+  }
+
+  .subAccesoDenegado {
+    position: relative;
+    background-color: red;
+    height: 40px;
+    width: 290px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 20px;
+    border: 3px solid black;
     font-weight: bold;
   }
 
-  .botonEncriptar {
-    background-color: #275083;
-    color: #f3f5fc;
+  .cartelError {
+    background-color: red;
+    position: absolute;
+    padding: 3px;
+    border: 3px solid red;
+    border-radius: 20px;
+    z-index: 1000;
+    display: none;
   }
 
-  .botonCopiar {
-    background-color: #ffff;
+  .subCartelError {
+    position: relative;
+    background-color: red;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 20px;
+    border: 3px solid black;
+    font-weight: bold;
+  }
+
+  .subCartelError img {
+    height: 190px;
   }
 }

@@ -6,9 +6,9 @@
     "axe/forms": [
       "default",
       {
-        "label": "off",
-        "select-name": "off"
+        "label": "off"
       }
-    ]
+    ],
+    "no-inline-styles": "off"
   }
 }
