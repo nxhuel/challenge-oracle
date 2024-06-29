@@ -7,6 +7,9 @@
   border-radius: 20px;
   z-index: 1000;
   display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .subAccesoDenegado {
@@ -31,6 +34,9 @@
   z-index: 1000;
   display: none;
   box-sizing: border-box;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .subCartelError {

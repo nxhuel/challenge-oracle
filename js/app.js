@@ -161,7 +161,7 @@ const encriptarTexto_V1 = () => {
     let ventanaAlerta = document.getElementById('cartelError');
 
     if (ventanaAlerta.style.display === 'none' || ventanaAlerta.style.display === '') {
-        establecerPosRandom(ventanaAlerta);
+        // establecerPosRandom(ventanaAlerta);
         ventanaAlerta.style.display = 'block';
     };
 
@@ -220,7 +220,7 @@ const errorCaractEspeciales = () => {
     let ventanaAlerta = document.getElementById('cartelError');
 
     if (ventanaAlerta.style.display === 'none' || ventanaAlerta.style.display === '') {
-        establecerPosRandom(ventanaAlerta);
+        // establecerPosRandom(ventanaAlerta);
         ventanaAlerta.style.display = 'block';
     };
 
@@ -243,7 +243,7 @@ const desencriptarTexto_V1 = () => {
     let ventanaAlerta = document.getElementById('cartelError');
 
     if (ventanaAlerta.style.display === 'none' || ventanaAlerta.style.display === '') {
-        establecerPosRandom(ventanaAlerta);
+        // establecerPosRandom(ventanaAlerta);
         ventanaAlerta.style.display = 'block';
     };
 
@@ -331,7 +331,7 @@ const errorCerrarVentana = () => {
     let intervalo;
 
     if (ventanaAlerta.style.display === 'none' || ventanaAlerta.style.display === '') {
-        establecerPosRandom(ventanaAlerta);
+        // establecerPosRandom(ventanaAlerta);
         ventanaAlerta.style.display = 'block';
 
         let contador = 0;
@@ -349,36 +349,34 @@ const errorCerrarVentana = () => {
     }, 1000)
 }
 
-function obtenerPosRandom(element) {
-    const xMax = window.innerWidth - element.offsetWidth;
-    const yMax = window.innerHeight - element.offsetHeight;
+// function obtenerPosRandom(element) {
+//     const xMax = window.innerWidth - element.offsetWidth;
+//     const yMax = window.innerHeight - element.offsetHeight;
 
-    let randomX = Math.random() * xMax;
-    let randomY = Math.random() * yMax;
+//     let randomX = Math.random() * xMax;
+//     let randomY = Math.random() * yMax;
 
-    // Asegura que las posiciones aleatorias no estén fuera de los límites
-    randomX = Math.min(randomX, xMax);
-    randomY = Math.min(randomY, yMax);
+//     randomX = Math.min(randomX, xMax);
+//     randomY = Math.min(randomY, yMax);
 
-    const x = Math.max(randomX, 0); // Asegura que x no sea negativo
-    const y = Math.max(randomY, 0); // Asegura que y no sea negativo
+//     const x = Math.max(randomX, 0); 
+//     const y = Math.max(randomY, 0); 
 
-    return { x, y };
-}
+//     return { x, y };
+// }
 
-function establecerPosRandom(element) {
-    let { x, y } = obtenerPosRandom(element);
+// function establecerPosRandom(element) {
+//     let { x, y } = obtenerPosRandom(element);
 
-    if (x > window.innerWidth) {
-        x = window.innerWidth - element.offsetWidth;
-    }
+//     if (x > window.innerWidth) {
+//         x = window.innerWidth - element.offsetWidth;
+//     }
 
-    // Ajusta la posición si el elemento se desborda hacia abajo
-    if (y > window.innerHeight) {
-        y = window.innerHeight - element.offsetHeight;
-    }
+//     if (y > window.innerHeight) {
+//         y = window.innerHeight - element.offsetHeight;
+//     }
 
-    element.style.left = `${x}px`;
-    element.style.top = `${y}px`;
+//     element.style.left = `${x}px`;
+//     element.style.top = `${y}px`;
 
-}
+// }
