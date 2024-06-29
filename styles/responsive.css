@@ -259,6 +259,7 @@
   .accesoDenegado {
     background-color: red;
     position: absolute;
+    /* position: fixed; */
     padding: 3px;
     border: 3px solid red;
     border-radius: 20px;
@@ -280,7 +281,7 @@
 
   .cartelError {
     background-color: red;
-    position: absolute;
+    position: fixed;
     padding: 3px;
     border: 3px solid red;
     border-radius: 20px;

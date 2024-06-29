@@ -278,7 +278,7 @@ const desencriptarTexto_V2 = (texto) => {
     }, 2000),
 
 
-    document.getElementById('textoCopiado').disabled = true;
+        document.getElementById('textoCopiado').disabled = true;
 
     setTimeout(() => {
         document.getElementById('textoCopiado').disabled = false;
@@ -350,15 +350,35 @@ const errorCerrarVentana = () => {
 }
 
 function obtenerPosRandom(element) {
-    const x = window.innerWidth - element.clientWidth;
-    const y = window.innerHeight - element.clientHeight;
-    const randomX = Math.floor(Math.random() * x);
-    const randomY = Math.floor(Math.random() * y);
-    return { x: randomX, y: randomY };
+    const xMax = window.innerWidth - element.offsetWidth;
+    const yMax = window.innerHeight - element.offsetHeight;
+
+    let randomX = Math.random() * xMax;
+    let randomY = Math.random() * yMax;
+
+    // Asegura que las posiciones aleatorias no estén fuera de los límites
+    randomX = Math.min(randomX, xMax);
+    randomY = Math.min(randomY, yMax);
+
+    const x = Math.max(randomX, 0); // Asegura que x no sea negativo
+    const y = Math.max(randomY, 0); // Asegura que y no sea negativo
+
+    return { x, y };
 }
 
 function establecerPosRandom(element) {
-    const { x, y } = obtenerPosRandom(element);
+    let { x, y } = obtenerPosRandom(element);
+
+    if (x > window.innerWidth) {
+        x = window.innerWidth - element.offsetWidth;
+    }
+
+    // Ajusta la posición si el elemento se desborda hacia abajo
+    if (y > window.innerHeight) {
+        y = window.innerHeight - element.offsetHeight;
+    }
+
     element.style.left = `${x}px`;
     element.style.top = `${y}px`;
+
 }
