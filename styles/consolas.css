@@ -8,6 +8,7 @@
   align-items: center;
   justify-content: center;
   gap: 5%;
+  padding-bottom: 5%;
 }
 
 /* consola uno */
@@ -20,7 +21,10 @@
   width: 330px;
   height: 300px;
   border: 2px solid #00ff00;
+}
 
+.consolaDos {
+  padding-bottom: 1%;
 }
 
 .consolaUno_nav,
